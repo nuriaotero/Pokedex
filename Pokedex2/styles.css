@@ -41,7 +41,19 @@ body {
     text-align: center;
     position: relative;
 }
+header a{
 
+         background: linear-gradient(to bottom, #ff1a1a, #cc0000);
+    color: white;
+    border: none;
+    margin-bottom: -10px;
+    padding: 0 30px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    min-width: 120px;}
 .title {
     color: var(--white);
     font-size: 2.5rem;
