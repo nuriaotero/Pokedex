@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex Intermedia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">Pokédex Intermedia</h1>
+            <div class="search-container">
+                <input type="text" id="search-input" class="search-input" placeholder="Buscar Pokémon...">
+                <button id="search-btn" class="search-btn">🔍</button>
+            </div>
+        </header>
+
+        <main class="main">
+            <!-- Vista de Lista -->
+            <div id="list-view" class="view active">
+                <div class="pokemon-grid" id="pokemon-grid"></div>
+                
+                <div class="pagination">
+                    <button id="prev-btn" class="pagination-btn" disabled>
+                        ⬅️ Anterior
+                    </button>
+                    <span id="page-info" class="page-info">Página 1</span>
+                    <button id="next-btn" class="pagination-btn">
+                        Siguiente ➡️
+                    </button>
+                </div>
+            </div>
+
+            <!-- Vista de Detalle -->
+            <div id="detail-view" class="view">
+                <button id="back-btn" class="back-btn">← Volver al listado</button>
+                <div id="pokemon-detail" class="pokemon-detail"></div>
+            </div>
+        </main>
+
+        <!-- Loading -->
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Cargando Pokémon...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

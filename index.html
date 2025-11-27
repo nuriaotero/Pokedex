@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Pokédex</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ff1a1a 0%, #cc0000 50%, #2c5aa0 100%);
+            font-family: 'Arial Rounded MT Bold', 'Segoe UI', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .menu-container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 8px solid #2c2c2c;
+            position: relative;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .menu-container::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 12px;
+            background: #2c2c2c;
+            transform: translateY(-50%);
+        }
+
+        .menu-container::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ffffff, #f0f0f0);
+            border: 8px solid #2c2c2c;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-title {
+            color: #ff1a1a;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+
+        .menu-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .menu-link {
+            display: block;
+            background: linear-gradient(135deg, #2c5aa0, #1e3d72);
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: 3px solid #ffcb05;
+            transition: all 0.3s ease;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .menu-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #ff1a1a, #cc0000);
+            border-color: #2c5aa0;
+        }
+
+        .menu-link:hover::before {
+            left: 100%;
+        }
+
+        .menu-link:active {
+            transform: translateY(-1px);
+        }
+
+        .pokeball-decoration {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .pokeball {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(to bottom, #ffffff 0%, #ffffff 50%, #ff1a1a 50%, #ff1a1a 100%);
+            border-radius: 50%;
+            border: 3px solid #2c2c2c;
+            position: relative;
+        }
+
+        .pokeball::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #2c2c2c;
+            transform: translateY(-50%);
+        }
+
+        .pokeball::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 15px;
+            height: 15px;
+            background: #ffffff;
+            border: 3px solid #2c2c2c;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Efectos de animación */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .menu-link:nth-child(1) {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .menu-link:nth-child(2) {
+            animation: float 3s ease-in-out infinite 0.5s;
+        }
+
+        .menu-link:nth-child(3) {
+            animation: float 3s ease-in-out infinite 1s;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .menu-container {
+                padding: 30px 20px;
+            }
+            
+            .menu-title {
+                font-size: 2rem;
+            }
+            
+            .menu-link {
+                padding: 12px 20px;
+                font-size: 1.1rem;
+            }
+            
+            .pokeball {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <h1 class="menu-title">Menu Pokédex</h1>
+        <div class="menu-links">
+            <a href="Pokedex1/index.html" class="menu-link">Pokédex Básica</a>
+            <a href="Pokedex2/index.html" class="menu-link">Pokédex Intermedia</a>
+            <a href="Pokedex3/index.html" class="menu-link">Pokédex Avanzada</a>
+        </div>
+        <div class="pokeball-decoration">
+            <div class="pokeball"></div>
+            <div class="pokeball"></div>
+            <div class="pokeball"></div>
+        </div>
+    </div>
+</body>
+</html>

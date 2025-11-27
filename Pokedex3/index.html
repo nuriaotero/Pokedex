@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex Avanzada</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="logo">Pokédex</h1>
+            <a href="../index.html">Volver</a>
+            <div class="controls">
+                <button id="theme-btn" class="theme-btn">🌙</button>
+                <button id="favorites-btn" class="favorites-btn">⭐</button>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <button class="nav-btn active" data-view="list">📋 Lista</button>
+            <button class="nav-btn" data-view="search">🔍 Buscar</button>
+            <button class="nav-btn" data-view="favorites">❤️ Favoritos</button>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main">
+            <!-- Vista Lista -->
+            <div id="list-view" class="view active">
+                <div class="filters">
+                    <select id="type-filter">
+                        <option value="all">Todos los tipos</option>
+                    </select>
+                    <select id="gen-filter">
+                        <option value="all">Todas las generaciones</option>
+                    </select>
+                </div>
+                
+                <div class="pokemon-grid" id="pokemon-list"></div>
+                
+                <div class="pagination">
+                    <button id="prev-btn" class="page-btn">⬅️ Anterior</button>
+                    <span id="page-info">Página 1</span>
+                    <button id="next-btn" class="page-btn">Siguiente ➡️</button>
+                </div>
+            </div>
+
+            <!-- Vista Buscar -->
+            <div id="search-view" class="view">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Escribe nombre o ID...">
+                    <button id="search-btn">🔍 Buscar</button>
+                </div>
+                <div id="search-results"></div>
+            </div>
+
+            <!-- Vista Favoritos -->
+            <div id="favorites-view" class="view">
+                <h2>❤️ Tus Favoritos</h2>
+                <div class="pokemon-grid" id="favorites-list"></div>
+                <div id="no-favorites" class="empty">
+                    <p>No tienes favoritos todavía</p>
+                    <p>¡Haz clic en el corazón de cualquier Pokémon!</p>
+                </div>
+            </div>
+
+            <!-- Vista Detalle -->
+            <div id="detail-view" class="view">
+                <button id="back-btn" class="back-btn">← Volver</button>
+                <div id="pokemon-detail"></div>
+            </div>
+        </main>
+
+        <!-- Loading -->
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Cargando...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
