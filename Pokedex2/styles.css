@@ -46,8 +46,8 @@ header a{
          background: linear-gradient(to bottom, #ff1a1a, #cc0000);
     color: white;
     border: none;
-    margin-bottom: -10px;
-    padding: 0 30px;
+ 
+    
     border-radius: 12px;
     cursor: pointer;
     font-size: 18px;
